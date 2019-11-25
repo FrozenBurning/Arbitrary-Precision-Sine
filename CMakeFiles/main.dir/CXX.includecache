@@ -9,4 +9,10 @@
 /home/royubuntu/numerical_analysis/project2/src/main.cpp
 iostream
 -
+stdlib.h
+-
+math.h
+-
+iomanip
+-
 
