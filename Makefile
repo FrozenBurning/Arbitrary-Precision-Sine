@@ -123,6 +123,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/SinSolver.o: src/SinSolver.cpp.o
+
+.PHONY : src/SinSolver.o
+
+# target to build an object file
+src/SinSolver.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SinSolver.cpp.o
+.PHONY : src/SinSolver.cpp.o
+
+src/SinSolver.i: src/SinSolver.cpp.i
+
+.PHONY : src/SinSolver.i
+
+# target to preprocess a source file
+src/SinSolver.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SinSolver.cpp.i
+.PHONY : src/SinSolver.cpp.i
+
+src/SinSolver.s: src/SinSolver.cpp.s
+
+.PHONY : src/SinSolver.s
+
+# target to generate assembly for a file
+src/SinSolver.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SinSolver.cpp.s
+.PHONY : src/SinSolver.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... src/SinSolver.o"
+	@echo "... src/SinSolver.i"
+	@echo "... src/SinSolver.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

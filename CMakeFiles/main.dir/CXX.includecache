@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/royubuntu/numerical_analysis/project2/src/SinSolver.cpp
+SinSolver.h
+/home/royubuntu/numerical_analysis/project2/src/SinSolver.h
+
 /home/royubuntu/numerical_analysis/project2/src/main.cpp
 iostream
 -
@@ -14,5 +18,13 @@ stdlib.h
 math.h
 -
 iomanip
+-
+SinSolver.h
+/home/royubuntu/numerical_analysis/project2/src/SinSolver.h
+
+include/SinSolver.h
+math.h
+-
+iostream
 -
 
