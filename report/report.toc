@@ -21,6 +21,6 @@
 \contentsline {subsubsection}{\numberline {4.2.3}总误差}{9}{subsubsection.4.2.3}
 \contentsline {subsection}{\numberline {4.3}计算代价与收敛速度}{9}{subsection.4.3}
 \contentsline {section}{\numberline {5}算法流程与实现}{10}{section.5}
-\contentsline {section}{\numberline {6}结果与总结}{10}{section.6}
-\contentsline {subsection}{\numberline {6.1}与C++标准Math库结果对比}{10}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}总结和体会}{10}{subsection.6.2}
+\contentsline {section}{\numberline {6}结果与总结}{11}{section.6}
+\contentsline {subsection}{\numberline {6.1}与C++标准Math库结果对比}{11}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}总结和体会}{11}{subsection.6.2}

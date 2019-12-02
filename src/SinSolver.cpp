@@ -53,7 +53,7 @@ double SinSolver::taylor_series_method()
         sum = index / Factorial * negation;
         TaylorExpansion += sum;
         i += 2;
-        std::cout << "order: " << i << std::endl;
+        // std::cout << "order: " << i << std::endl;
     } while (abs(sum) > 1e-6);
     return (TaylorExpansion * _flag);
 }

@@ -4,38 +4,46 @@
 #include <iomanip>
 #include "SinSolver.h"
 
-// double mysin(double num2)
-// {
-//     int i=1,negation=1;//取反
-//     double sum;
-//     double index=num2;//指数
-//     double Factorial=1;//阶乘
-//     double TaylorExpansion=num2;//泰勒展开式求和
-//      do
-//      {
-//          Factorial=Factorial*(i+1)*(i+2);//求阶乘
-//          index*=num2*num2;//求num2的次方
-//          negation=-negation;//每次循环取反
-//          sum=index/Factorial*negation;
-//          TaylorExpansion+=sum;
-//          i+=2;
-//          std::cout<<"order: "<<i<<std::endl;
-//      }while(abs(sum)>1e-6);
-//      return(TaylorExpansion);
-// }
-
-
-
-
-
-
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    SinSolver mysin(5);
-    std::cout<<std::setprecision(12);
-    std::cout<<"mysin= "<<mysin.solver_handler(2)<<std::endl;
-    std::cout<<"stdsin= "<<sin(5)<<std::endl;
+    double x;
+    int method;
+    std::string tmp;
+    std::cout << "$$$$$$$$Welcome to use My Sine Calculator$$$$$$$$" <<std::endl;
+    while (1)
+    {
+        std::cout<<"Enter [q] to quit, Press Any key to continue......"<<std::endl;
+        std::cin >> tmp;
+        if (tmp == "q")
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "-------Please input x-------" << std::endl;
+            std::cout << "x = ";
+            std::cin >> x;
+            std::cout << "-------Please Choose Method-------" << std::endl;
+            std::cout << "[0]Taylor Series" << std::endl;
+            std::cout << "[1]Differential Equation" << std::endl;
+            std::cout << "[2]Delta accumulator" << std::endl;
+            std::cout << "Your Choice: ";
+            std::cin >> method;
+            std::cout << "*************Solving**************" << std::endl;
+            std::cout << "*************Solving**************" << std::endl;
+            std::cout << "*************Solving**************" << std::endl;
+            SinSolver mysin(x);
+            std::cout << std::setprecision(4);
+            std::cout << "_______________________" << std::endl;
+            std::cout << "|  My Sine   "
+                      << "|" << mysin.solver_handler(method) << "|"<<std::endl;
+            std::cout << "_______________________" << std::endl;
+            std::cout << "|C++ Lib Sine"
+                      << "|" << sin(x) << "|"<<std::endl;
+            std::cout << "_______________________" << std::endl;
+            std::cout<<std::endl<<std::endl<<std::endl;
+        }
+    }
+
     return 0;
 }
-
-

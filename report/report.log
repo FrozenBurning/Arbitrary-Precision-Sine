@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.10.17)  2 DEC 2019 20:36
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.10.17)  2 DEC 2019 21:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1574,36 +1574,38 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.05624> not available
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 3.
 
-)
+[1
+
+])
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
- [1
-
-]
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10.53937> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 19.
- [2] [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
- [9] [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
+ [2] [3] [4] [5] [6] [7] [8] [9]
+File: images/procedure.png Graphic file (type bmp)
+<images/procedure.png>
+ [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 354.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 354.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 365.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 365.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.78749pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
  ) 
 Here is how much of TeX's memory you used:
- 28848 strings out of 493007
- 566173 string characters out of 6136718
- 626410 words of memory out of 5000000
- 32574 multiletter control sequences out of 15000+600000
+ 28859 strings out of 493007
+ 566317 string characters out of 6136718
+ 626690 words of memory out of 5000000
+ 32582 multiletter control sequences out of 15000+600000
  545578 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,11n,74p,10408b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (10 pages).
+Output written on report.pdf (11 pages).
