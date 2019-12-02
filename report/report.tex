@@ -132,15 +132,86 @@
 \subsection{误差分析}
 
 \subsubsection{方法误差}
+方法误差可以从两部分来分析，一部分来源于预测，一部分来源于校正。
+
+首先分析预测带来的局部截断误差，设$y_n = y(x_n)$，分析$\bar{y}_{n+1} - y(x_{n+1})$。由欧拉公式预测法的公式：
+\begin{equation}
+    \bar{y}_{n+1} = y_n + hf(x_n,y_n)
+\end{equation}
+
+对于精确值$y(x_{n+1})$进行泰勒展开有下式：
+\begin{equation}
+    y(x_{n+1}) = y(x_n) + hy^{(1)}(x_n) + \frac{h^2}{2}y^{(2)}(x_n)+\dots
+\end{equation}
+
+根据微分方程约束条件$f(x_n,y_n) = y'(x_n)$，(10)与(11)式相减后再求导可得：
+\begin{equation}
+    \bar{y}'_{n+1} - y'(x_{n+1}) \doteq \frac{h^2}{2}\frac{\partial f}{\partial y} \Bigg|_{x=x_n} \cdot y^{(3)}(x_n)
+\end{equation}
+
+上式可以作为预测一步带来的局部截断误差，代入校正一步进行分析。对于校正一步，分析$y(x_{n+1}) - y_{n+1}$。根据校正公式:
+\begin{equation}
+    \begin{aligned}
+        y_{n+1} &= y_n + \frac{h}{2}[f(x_n,y_n)+f(x_{n+1},\bar{y}_{n+1})]\\
+        &= y_n + \frac{h}{2}[y'(x_n)+\bar{y}'_{n+1}] \\
+        &= y_n + \frac{h}{2}[y'(x_n)+y'(x_{n+1})+\frac{h^2}{2}y^{(3)}(x_n)]\\
+        &= y_n + \frac{h}{2}[y'(x_n)+y'(x_n) + hy^{(2)}(x_n) + \frac{h^2}{2}y^{(3)}(x_n)+\dots + \frac{h^2}{2}\frac{\partial f}{\partial y} \Bigg|_{x=x_n} \cdot y^{(3)}(x_n)]
+    \end{aligned}
+\end{equation}
+
+对于精确值$y(x_{n+1})$进行泰勒展开有下式：
+\begin{equation}
+    y(x_{n+1}) = y_n + hy'(x_n) + \frac{h^2}{2}y^{(2)}(x_n) + \frac{h^3}{3!}y^{(3)}(x_n) + \dots
+\end{equation}
+
+同理，将(13)与(14)相减，可以得到同时考虑预测和校正的局部截断误差：
+\begin{equation}
+    y(x_{n+1}) - y_{n+1} = (-\frac{h^3}{12} - \frac{h^3}{4}\frac{\partial f}{\partial y} \Bigg|_{x=x_n})\cdot y^{(3)}(x_n) \doteq O(h^3)
+\end{equation}
+
+上面的分析是针对一阶微分方程，而本问题相当于两个一阶微分方程，每次局部截断误差将叠加两次，但是这并不妨碍误差分析，只不过本问题中局部截断误差的具体系数需要在上面分析的基础上翻倍，但从归约角度上来看，局部截断误差仍是$O(h^3)$，因此累计起来整体算法仍是二阶精度：
+\begin{equation}
+    \begin{aligned}
+    \Delta_{n+1} &\doteq \Delta_n + h\cdot \frac{\partial f}{\partial y}\Delta_n + (-\frac{h^3}{12} - \frac{h^3}{4}\frac{\partial f}{\partial y} \Bigg|_{x=x_n})\cdot y^{(3)}(x_n)\\
+    &\doteq\Delta_n + (-\frac{h^3}{12} - \frac{h^3}{4}\frac{\partial f}{\partial y} \Bigg|_{x=x_n})\cdot y^{(3)}(x_n)\\
+    &\doteq O(h^2)
+    \end{aligned}
+\end{equation}
 
 
 \subsubsection{舍入误差}
 
+事实上，为了实现起来较为方便，在代码中使用了如下的计算逻辑:
+\begin{equation}
+    \begin{cases}
+        y_p = y_n + hf(x_n,y_n)\\
+        y_q = y_n + hf(x_n+h,y_p)\\
+        y_{n+1} = \frac{1}{2}(y_p+y_q)
+    \end{cases}
+\end{equation}
+
+假设每次计算均精确到$d$位小数，则存储带来的舍入误差为：$$\delta_0 = \frac{1}{2}\times 10^{-d}$$
+
+则每一步迭代均涉及3x2=6次加法，因此迭代n步之后加法带来的累计舍入误差:
+\begin{equation}
+    \delta = 6n\delta_0 = 6n\times \frac{1}{2}\times 10^{-d}    
+\end{equation}
+
+
 \subsubsection{总误差}
+
+因此总误差可以表示为：
+\begin{equation}
+    A = \Delta_{n+1} + \delta
+\end{equation}
+
+其中具体表达式在此不做展开，上文中(16)和(18)均已明确表示。
+
 
 \subsection{算法流程}
 
 \subsection{计算代价与收敛速度}
+给定精度$d$，则根据上面的误差分析可知，本方法是一个二阶方法，只需要$O(\frac{1}{\sqrt{d}})$的时间就可以收敛。对于计算代价，每次迭代均为常数时间，因此计算代价与收敛速度应当同阶。
 
 \section{方程求根法}
 
