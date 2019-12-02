@@ -24,12 +24,13 @@ SinSolver::SinSolver(double x)
     }
 
     _x = x;
+    //params calc
     _n = 1;
-    while (_x/_n > 1e-5)
+    while (_x / _n > 1e-6)
     {
         _n++;
     }
-    
+
     _h = (_x - 0.0) / _n;
 }
 
@@ -59,23 +60,50 @@ double SinSolver::taylor_series_method()
 
 double SinSolver::differential_equation_method()
 {
+    // //params calc
+    // _n = 1;
+    // while (_x / _n > 1e-6)
+    // {
+    //     _n++;
+    // }
+
+    // _h = (_x - 0.0) / _n;
+
+    //calc sinx
     double cosn = 1.0;
     double sinn = 0.0;
-    double cosp,cosq,sinp,sinq,next_cos,next_sin;
+    double cosp, cosq, sinp, sinq, next_cos, next_sin;
     for (int i = 0; i <= _n; i++)
     {
         cosp = cosn - _h * sinn;
         sinp = sinn + _h * cosn;
         cosq = cosn - _h * sinp;
         sinq = sinn + _h * cosp;
-        next_cos = (cosp+cosq)/2;
-        next_sin = (sinp+sinq)/2;
+        next_cos = (cosp + cosq) / 2;
+        next_sin = (sinp + sinq) / 2;
         //move
         cosn = next_cos;
         sinn = next_sin;
     }
-    return sinn;
-    
+    return sinn * _flag;
+}
+
+double SinSolver::fourier_method()
+{
+    double dsin = _h - _h * _h * _h / 6;
+    double dcos = 1 - 2 * (_h / 2 - _h / 2 * _h / 2 * _h / 2 / 6) * (_h / 2 - _h / 2 * _h / 2 * _h / 2 / 6);
+    double cosn = 1.0;
+    double sinn = 0.0;
+    double next_sin, next_cos;
+    for (int i = 0; i <= _n; i++)
+    {
+        next_sin = cosn * dsin + sinn * dcos;
+        next_cos = cosn * dcos - sinn * dsin;
+        //move
+        cosn = next_cos;
+        sinn = next_sin;
+    }
+    return sinn * _flag;
 }
 
 double SinSolver::solver_handler(int method)
@@ -83,15 +111,11 @@ double SinSolver::solver_handler(int method)
     switch (method)
     {
     case Taylor_Series:
-    {
         return taylor_series_method();
-    }
-    break;
     case Differential_Equation:
-    {
         return differential_equation_method();
-    }
-    break;
+    case Fourier:
+        return fourier_method();
     default:
         return 0;
     }

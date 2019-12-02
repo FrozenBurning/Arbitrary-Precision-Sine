@@ -31,10 +31,10 @@
 
 int main (int argc, char *argv[])
 {
-    SinSolver mysin(1);
+    SinSolver mysin(5);
     std::cout<<std::setprecision(12);
-    std::cout<<"mysin= "<<mysin.solver_handler(0)<<std::endl;
-    std::cout<<"stdsin= "<<sin(1)<<std::endl;
+    std::cout<<"mysin= "<<mysin.solver_handler(2)<<std::endl;
+    std::cout<<"stdsin= "<<sin(5)<<std::endl;
     return 0;
 }
 

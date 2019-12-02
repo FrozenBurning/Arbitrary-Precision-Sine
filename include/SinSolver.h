@@ -4,6 +4,7 @@
 
 #define Taylor_Series 0
 #define Differential_Equation 1
+#define Fourier 2
 
 class SinSolver
 {
@@ -15,6 +16,7 @@ private:
 
     double taylor_series_method();
     double differential_equation_method();
+    double fourier_method();
 public:
     SinSolver(double x);
     ~SinSolver();
