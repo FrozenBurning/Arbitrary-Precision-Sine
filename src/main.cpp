@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     double x;
     int method;
     std::string tmp;
+    std::cout << std::setiosflags(std::ios::fixed)<<std::setprecision(4);
     std::cout << "$$$$$$$$Welcome to use My Sine Calculator$$$$$$$$" <<std::endl;
     while (1)
     {
@@ -33,7 +34,6 @@ int main(int argc, char *argv[])
             std::cout << "*************Solving**************" << std::endl;
             std::cout << "*************Solving**************" << std::endl;
             SinSolver mysin(x);
-            std::cout << std::setprecision(4);
             std::cout << "_______________________" << std::endl;
             std::cout << "|  My Sine   "
                       << "|" << mysin.solver_handler(method) << "|"<<std::endl;
@@ -44,6 +44,5 @@ int main(int argc, char *argv[])
             std::cout<<std::endl<<std::endl<<std::endl;
         }
     }
-
     return 0;
 }

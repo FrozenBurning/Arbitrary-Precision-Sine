@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.10.17)  2 DEC 2019 21:08
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.10.17)  3 DEC 2019 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1585,27 +1585,71 @@ LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10.53937
  [2] [3] [4] [5] [6] [7] [8] [9]
 File: images/procedure.png Graphic file (type bmp)
 <images/procedure.png>
- [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 359.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 359.
+
+File: images/series0.png Graphic file (type bmp)
+<images/series0.png>
+File: images/diff0.png Graphic file (type bmp)
+<images/diff0.png>
+File: images/delta0.png Graphic file (type bmp)
+<images/delta0.png>
+[10]
+File: images/series31415.png Graphic file (type bmp)
+<images/series31415.png>
+File: images/diff31415.png Graphic file (type bmp)
+<images/diff31415.png>
+File: images/delta31415.png Graphic file (type bmp)
+<images/delta31415.png>
+File: images/serieshalfpi.png Graphic file (type bmp)
+<images/serieshalfpi.png>
+File: images/diffhalfpi.png Graphic file (type bmp)
+<images/diffhalfpi.png>
+File: images/deltahalfpi.png Graphic file (type bmp)
+<images/deltahalfpi.png>
+File: images/series158.png Graphic file (type bmp)
+<images/series158.png>
+File: images/diff158.png Graphic file (type bmp)
+<images/diff158.png>
+File: images/delta158.png Graphic file (type bmp)
+<images/delta158.png>
+File: images/series-5522.png Graphic file (type bmp)
+<images/series-5522.png>
+File: images/diff-5522.png Graphic file (type bmp)
+<images/diff-5522.png>
+File: images/delta-5522.png Graphic file (type bmp)
+<images/delta-5522.png>
  [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 365.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 408.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 408.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.78749pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
  ) 
 Here is how much of TeX's memory you used:
- 28859 strings out of 493007
- 566317 string characters out of 6136718
- 626690 words of memory out of 5000000
- 32582 multiletter control sequences out of 15000+600000
+ 28920 strings out of 493007
+ 567623 string characters out of 6136718
+ 626961 words of memory out of 5000000
+ 32628 multiletter control sequences out of 15000+600000
  545578 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,11n,74p,10408b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (11 pages).
+Output written on report.pdf (12 pages).

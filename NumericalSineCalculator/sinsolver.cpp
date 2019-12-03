@@ -1,4 +1,4 @@
-#include "SinSolver.h"
+#include "sinsolver.h"
 
 SinSolver::SinSolver(double x)
 {
@@ -40,16 +40,16 @@ SinSolver::~SinSolver()
 
 double SinSolver::taylor_series_method()
 {
-    int i = 1, negation = 1; 
+    int i = 1, negation = 1;
     double sum;
-    double index = _x;          
+    double index = _x;     
     double Factorial = 1;        //阶乘
     double TaylorExpansion = _x;
     do
     {
         Factorial = Factorial * (i + 1) * (i + 2);
         index *= _x * _x;
-        negation = -negation;//考虑每项前的-1因子
+        negation = -negation; //考虑每次的-1因子
         sum = index / Factorial * negation;
         TaylorExpansion += sum;
         i += 2;
