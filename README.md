@@ -1,7 +1,7 @@
-#Numerical Sine Calculator
+# Numerical Sine Calculator
 ## Numerical Analysis Project 2
 
-使用数值分析方法计算$sinx$的任意数值解。求解器提供三种方法：级数逼近法、常微分方程法和微小增量法。GUI使用Qt框架编写。
+使用数值分析方法计算 $ sinx $ 的任意数值解。求解器提供三种方法：级数逼近法、常微分方程法和微小增量法。GUI使用Qt框架编写。
 
 **Author**: Zhaoxi Chen
 
